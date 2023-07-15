@@ -8,6 +8,14 @@ function AppRouter() {
         element: <Auth />,
         path: '/',
       }
+      {
+        element: <Auth type='register'/>,
+        path: '/register',
+      },
+      {
+        element: <Auth type='login'/>,
+        path: '/login',
+      },
     ]
   );
 }

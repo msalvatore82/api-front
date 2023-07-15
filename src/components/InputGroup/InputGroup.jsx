@@ -1,6 +1,8 @@
+import './InputGroup.css';
+
 function InputGroup(props) {
   return (
-    <>
+    <div className='inputGroup'>
       <label htmlFor={ props.input.id }> { props.label } </label>
       <input
         onChange={ props.input.onChange}
@@ -9,7 +11,7 @@ function InputGroup(props) {
         type={ props.input.type || 'text' }
         value={ props.value }
       />
-    </>
+    </div>
   );
 }
 

@@ -10,9 +10,8 @@ import Button from '../../components/Button/Button.js';
 
 import './Auth.css';
 
-const inputsIds = ['username', 'mail', 'password'];
-
-function Auth() {
+function Auth({ type }) {
+  const inputsIds = type === 'register' ? ['username', 'mail', 'password'] : ['username', 'password'];
   const { request, data, error, loading } = useApi();
   const [credentials, setCredentials] = useState({});
   const { t } = useTranslation();
@@ -45,11 +44,11 @@ function Auth() {
           }
 
           <Button onClick={() => request({
-            route: 'register',
+            route: type,
             method:'POST',
             body: { ...credentials, phone: '666666666', rol: 'admin' }
           })}>
-            { t('authPage.register.buttonText') }
+            { t(`authPage.${type}.buttonText`) }
           </Button>
 
         </Panel>

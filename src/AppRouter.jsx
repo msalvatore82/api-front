@@ -6,10 +6,6 @@ function AppRouter() {
   return useRoutes(
     [
       {
-        element: <Auth />,
-        path: '/login',
-      },
-      {
         element: <Landing />,
         path: '/',
 

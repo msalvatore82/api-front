@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/logo.png'
+// import logo from '../../assets/logo.png'
 
 
 import "./Landing.css";
@@ -10,7 +10,7 @@ function Landing() {
     <div className="landing">
      <Navbar />
       <div className="logo">
-        <img src={logo} alt="logo"  />
+        {/* <img src={logo} alt="logo"  /> */}
       </div>
       
     </div>

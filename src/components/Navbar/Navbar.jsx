@@ -1,12 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
+
+import Select from '../../components/Select/Select.jsx';
 
 function Navbar() {
+  const { t } = useTranslation();
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
         <div className="container-fluid">
-          <img src="../../../public/favicon-logo.ico" alt="logo" />
           <button
             className="navbar-toggler"
             type="button"
@@ -51,6 +55,18 @@ function Navbar() {
                 <Link className="nav-link" to="/profile">
                   Profile
                 </Link>
+              </li>
+              <li>
+                <Select
+                  selectedKey={ i18n.language }
+                  data={
+                    Object.keys(i18n.options.resources)
+                      .map(key => ({ key, value: t(`languages.${key}`) }))
+                  }
+                  onChangeHandler={(language) => {
+                    i18n.changeLanguage(language.key);
+                  }}
+                />
               </li>
             </ul>
           </div>

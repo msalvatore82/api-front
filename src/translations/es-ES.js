@@ -17,6 +17,7 @@ export const TRANSLATIONS_ES = {
     password: {
       label: 'Contraseña',
       placeholder: 'Inserta su contraseña'
-    }
+    },
+    checkEmail: 'Verifica tu email y confirma tu cuenta'
   }
 };

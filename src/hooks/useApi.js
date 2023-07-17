@@ -5,22 +5,30 @@ export function useApi() {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
-  async function request({ route, method='GET', body, headers={} }) {
+  async function request({ route, method='GET', body, headers={} }, registerMessage) {
     setData();
     setError();
     setLoading(true);
+    const isLogin = route === 'login';
+    const isRegister = route === 'register';
     try {
-      // const response = await fetch(`https://api-bookings.onrender.com/${route}`, {
-      const response = await fetch(`https://api-hairs-deploy.onrender.com/${route}`, {
+      const response = await fetch(`https://apihairs.onrender.com/${route}`, {
         method,
-        headers: {'Content-Type': 'application/json', ...headers },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: localStorage.token,
+          ...headers
+        },
         body: body && JSON.stringify(body),
       });
-      console.log('response', response);
 
       if (response.ok) {
-        const responseAsJson = await response.json();
-        setData(responseAsJson);
+        if (isRegister) {
+          registerMessage && setData({ message: registerMessage });
+        } else {
+          const responseAsJson = await response.json();
+          isLogin ? localStorage.token = responseAsJson : setData(responseAsJson);
+        }
       } else {
         setError(new Error(`${response.status}: ${response.statusText}`));
       }

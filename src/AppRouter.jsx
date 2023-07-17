@@ -9,7 +9,7 @@ function AppRouter() {
         element: <Landing />,
         path: '/',
 
-      }
+      },
       {
         element: <Auth type='register'/>,
         path: '/register',

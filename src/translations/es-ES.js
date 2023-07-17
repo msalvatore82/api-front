@@ -19,5 +19,9 @@ export const TRANSLATIONS_ES = {
       placeholder: 'Inserta su contraseña'
     },
     checkEmail: 'Verifica tu email y confirma tu cuenta'
+  },
+  languages: {
+    'es-ES': 'Español',
+    'en-US': 'Inglés'
   }
 };

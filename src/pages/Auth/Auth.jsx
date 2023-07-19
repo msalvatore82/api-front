@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useApi } from '../../hooks/useApi.js';
 
 import InputGroup from '../../components/InputGroup/InputGroup.jsx';
+import Logo from '../../components/Logo/Logo.jsx';
 import Loading from '../../components/Loading/Loading.js';
 import Container from '../../components/Container/Container.js';
 import Panel from '../../components/Panel/Panel.js';
@@ -64,7 +65,7 @@ function Auth({ type }) {
           }
 
         </Panel>
-        { loading && <Modal><Loading/></Modal> }
+        { loading && <Modal><Loading><Logo/></Loading></Modal> }
       </Container>
     </div>
   );

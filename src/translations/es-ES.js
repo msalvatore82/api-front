@@ -1,4 +1,12 @@
 export const TRANSLATIONS_ES = {
+  navBar: {
+    home: 'Inicio',
+    register: 'Registro',
+    login: 'Acceder',
+    about: 'Sobre nosotros',
+    booking: 'Cita',
+    profile: 'Perfil',
+  },
   authPage: {
     register: {
       buttonText: 'Registrarse'
@@ -23,6 +31,10 @@ export const TRANSLATIONS_ES = {
   profile: {
     username: 'Usuario: ',
     email: 'Correo: ',
+  },
+  languages: {
+    'es-ES': 'Español',
+    'en-US': 'Inglés'
   }
   
 };

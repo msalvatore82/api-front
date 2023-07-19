@@ -1,4 +1,12 @@
 export const TRANSLATIONS_US = {
+  navBar: {
+    home: 'Home',
+    register: 'Register',
+    login: 'Login',
+    about: 'About us',
+    booking: 'Booking',
+    profile: 'Profile',
+  },
   authPage: {
     register: {
       buttonText: 'Register'

@@ -27,34 +27,34 @@ function Navbar() {
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
                 <a className="nav-link active" href="#">
-                  Home
+                  { t('navBar.home') }
                   <span className="visually-hidden">(current)</span>
                 </a>
               </li>
               {/* agregar o quitar con ternarios */}
               <li className="nav-item">
                 <Link className="nav-link" to="/register">
-                  Register
+                  { t('navBar.register') }
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
-                  Login
+                  { t('navBar.login') }
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">
-                  About
+                  { t('navBar.about') }
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/date">
-                  Date
+                <Link className="nav-link" to="/booking">
+                  { t('navBar.booking') }
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/profile">
-                  Profile
+                  { t('navBar.profile') }
                 </Link>
               </li>
               <li>

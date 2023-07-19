@@ -12,7 +12,7 @@ export function useApi() {
     const isLogin = route === 'login';
     const isRegister = route === 'register';
     try {
-      const response = await fetch(`https://apihairs.onrender.com/${route}`, {
+      const response = await fetch(process.env.API_URL, {
         method,
         headers: {
           'Content-Type': 'application/json',

@@ -1,12 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
+
+import Select from '../../components/Select/Select.jsx';
+import Container from '../../components/Container/Container.js';
 
 function Navbar() {
+  const { t } = useTranslation();
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
         <div className="container-fluid">
-          <img src="../../../public/favicon-logo.ico" alt="logo" />
           <button
             className="navbar-toggler"
             type="button"
@@ -22,35 +27,49 @@ function Navbar() {
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
                 <a className="nav-link active" href="#">
-                  Home
+                  { t('navBar.home') }
                   <span className="visually-hidden">(current)</span>
                 </a>
               </li>
               {/* agregar o quitar con ternarios */}
               <li className="nav-item">
                 <Link className="nav-link" to="/register">
-                  Register
+                  { t('navBar.register') }
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
-                  Login
+                  { t('navBar.login') }
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">
-                  About
+                  { t('navBar.about') }
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/date">
-                  Date
+                <Link className="nav-link" to="/booking">
+                  { t('navBar.booking') }
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/profile">
-                  Profile
+                  { t('navBar.profile') }
                 </Link>
+              </li>
+              <li>
+                <Container>
+                  <Select
+                    selectedKey={ i18n.language }
+                    data={
+                      Object.keys(i18n.options.resources)
+                        .map(key => ({ key, value: t(`languages.${key}`) }))
+                    }
+                    onChangeHandler={(language) => {
+                      i18n.changeLanguage(language.key);
+                    }}
+                  />
+                </Container>
               </li>
             </ul>
           </div>

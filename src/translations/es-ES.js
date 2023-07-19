@@ -1,4 +1,12 @@
 export const TRANSLATIONS_ES = {
+  navBar: {
+    home: 'Inicio',
+    register: 'Registro',
+    login: 'Acceder',
+    about: 'Sobre nosotros',
+    booking: 'Cita',
+    profile: 'Perfil',
+  },
   authPage: {
     register: {
       buttonText: 'Registrarse',
@@ -21,5 +29,9 @@ export const TRANSLATIONS_ES = {
       placeholder: 'Inserta su contraseña'
     },
     checkEmail: 'Verifica tu email y confirma tu cuenta'
+  },
+  languages: {
+    'es-ES': 'Español',
+    'en-US': 'Inglés'
   }
 };

@@ -29,6 +29,11 @@ function Auth({ type }) {
 
   return (
     <div className='auth'>
+      <Link className='nav-link' to={ '/' }>
+        <div className='logoContainer'>
+          <Logo/>
+        </div>
+      </Link>
       <Container className='row'>
         <Panel className='row col-9 col-md-6'>
           { data ?

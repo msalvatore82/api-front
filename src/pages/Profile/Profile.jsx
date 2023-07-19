@@ -4,8 +4,16 @@ import Navbar from '../../components/Navbar/Navbar'
 import './Profile.css'
 import Button from '../../components/Button/Button'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
+
+const user = {
+  username: "Matais",
+  mail: "prueba@prueba.com",
+}
 export default function Profile() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Navbar />
@@ -16,8 +24,8 @@ export default function Profile() {
             <img src="../../../public/portada-foto-perfil-redes-sociales-consejos.jpg" alt="" />
           </div>
           <div className='information'>
-            <div>username</div>
-            <div>mail</div>
+            <div>{t('profile.username')}{user.username}</div>
+            <div>{t('profile.email')}{user.mail}</div>
           </div>
           <div className='btn-profile'>
            <Link to='/' >

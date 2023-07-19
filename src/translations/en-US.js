@@ -19,5 +19,9 @@ export const TRANSLATIONS_US = {
       placeholder: 'Insert the password'
     },
     checkEmail: 'Check your email and confirm your account'
+  },
+  profile: {
+    username: 'Username: ',
+    email: 'Email: ',
   }
 };

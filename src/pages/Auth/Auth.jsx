@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import { useApi } from '../../hooks/useApi.js';
 
@@ -55,6 +56,10 @@ function Auth({ type }) {
               }, t('authPage.checkEmail'))}>
                 { t(`authPage.${type}.buttonText`) }
               </Button>
+
+              <Link className='nav-link auth-link' to={ type === 'login' ? '/register' : '/login' }>
+                { t(`authPage.${type}.link`) }
+              </Link>
             </>
           }
 

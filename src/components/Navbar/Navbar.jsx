@@ -3,6 +3,7 @@ import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 import Select from '../../components/Select/Select.jsx';
+import Container from '../../components/Container/Container.js';
 
 function Navbar() {
   const { t } = useTranslation();
@@ -57,16 +58,18 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <Select
-                  selectedKey={ i18n.language }
-                  data={
-                    Object.keys(i18n.options.resources)
-                      .map(key => ({ key, value: t(`languages.${key}`) }))
-                  }
-                  onChangeHandler={(language) => {
-                    i18n.changeLanguage(language.key);
-                  }}
-                />
+                <Container>
+                  <Select
+                    selectedKey={ i18n.language }
+                    data={
+                      Object.keys(i18n.options.resources)
+                        .map(key => ({ key, value: t(`languages.${key}`) }))
+                    }
+                    onChangeHandler={(language) => {
+                      i18n.changeLanguage(language.key);
+                    }}
+                  />
+                </Container>
               </li>
             </ul>
           </div>

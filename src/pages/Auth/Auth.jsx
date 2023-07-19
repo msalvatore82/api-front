@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useApi } from '../../hooks/useApi.js';
 
 import InputGroup from '../../components/InputGroup/InputGroup.jsx';
-import Loading from '../../components/Loading/Loading.jsx';
+import Loading from '../../components/Loading/Loading.js';
 import Container from '../../components/Container/Container.js';
 import Panel from '../../components/Panel/Panel.js';
 import Button from '../../components/Button/Button.js';

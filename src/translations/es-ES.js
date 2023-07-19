@@ -1,10 +1,12 @@
 export const TRANSLATIONS_ES = {
   authPage: {
     register: {
-      buttonText: 'Registrarse'
+      buttonText: 'Registrarse',
+      link: 'Acceder con tu cuenta'
     },
     login: {
       buttonText: 'Acceder',
+      link: 'Crear cuenta nueva'
     },
     username: {
       label: 'Usuario',

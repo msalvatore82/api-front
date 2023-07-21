@@ -30,6 +30,10 @@ export const TRANSLATIONS_US = {
     },
     checkEmail: 'Check your email and confirm your account'
   },
+  profile: {
+    username: 'Username: ',
+    email: 'Email: ',
+  },
   languages: {
     'es-ES': 'Spanish',
     'en-US': 'English'

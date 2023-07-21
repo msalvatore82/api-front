@@ -30,8 +30,13 @@ export const TRANSLATIONS_ES = {
     },
     checkEmail: 'Verifica tu email y confirma tu cuenta'
   },
+  profile: {
+    username: 'Usuario: ',
+    email: 'Correo: ',
+  },
   languages: {
     'es-ES': 'Español',
     'en-US': 'Inglés'
   }
+  
 };

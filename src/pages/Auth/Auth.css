@@ -4,3 +4,20 @@
   background-image: url('/background.jpg');
   background-repeat: round;
 }
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px !important;
+}
+
+.logoContainer {
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.logoContainer > svg {
+  width: 100%;
+  height: 100%;
+}

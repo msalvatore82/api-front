@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import { useApi } from '../../hooks/useApi.js';
 
 import InputGroup from '../../components/InputGroup/InputGroup.jsx';
-import Loading from '../../components/Loading/Loading.jsx';
+import Logo from '../../components/Logo/Logo.jsx';
+import Loading from '../../components/Loading/Loading.js';
 import Container from '../../components/Container/Container.js';
 import Panel from '../../components/Panel/Panel.js';
 import Button from '../../components/Button/Button.js';
@@ -27,6 +29,11 @@ function Auth({ type }) {
 
   return (
     <div className='auth'>
+      <Link className='nav-link' to={ '/' }>
+        <div className='logoContainer'>
+          <Logo/>
+        </div>
+      </Link>
       <Container className='row'>
         <Panel className='row col-9 col-md-6'>
           { data ?
@@ -55,11 +62,15 @@ function Auth({ type }) {
               }, t('authPage.checkEmail'))}>
                 { t(`authPage.${type}.buttonText`) }
               </Button>
+
+              <Link className='nav-link auth-link' to={ type === 'login' ? '/register' : '/login' }>
+                { t(`authPage.${type}.link`) }
+              </Link>
             </>
           }
 
         </Panel>
-        { loading && <Modal><Loading/></Modal> }
+        { loading && <Modal><Loading><Logo/></Loading></Modal> }
       </Container>
     </div>
   );

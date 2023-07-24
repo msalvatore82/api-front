@@ -6,6 +6,7 @@ import { useApi } from '../../hooks/useApi.js';
 import InputGroup from '../../components/InputGroup/InputGroup.jsx';
 import Logo from '../../components/Logo/Logo.jsx';
 import Loading from '../../components/Loading/Loading.js';
+import Error from '../../components/Error/Error.jsx';
 import Container from '../../components/Container/Container.js';
 import Panel from '../../components/Panel/Panel.js';
 import Button from '../../components/Button/Button.js';
@@ -79,6 +80,7 @@ function Auth({ type }) {
           }
 
         </Panel>
+        { error && <Error message={ error.message } /> }
         { loading && <Modal><Loading><Logo/></Loading></Modal> }
       </Container>
     </div>

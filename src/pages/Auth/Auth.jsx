@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 import { useApi } from '../../hooks/useApi.js';
 
 import InputGroup from '../../components/InputGroup/InputGroup.jsx';
@@ -17,9 +16,19 @@ import './Auth.css';
 
 function Auth({ type }) {
   const inputsIds = type === 'register' ? ['username', 'mail', 'password'] : ['username', 'password'];
-  const { request, data, error, loading } = useApi();
   const [credentials, setCredentials] = useState({});
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { request, data, error, loading, clear } = useApi();
+
+  useEffect(() => {
+    if (data?.message) {
+      setTimeout(() => {
+        clear();
+        navigate('/login');
+      }, 10 * 1000);
+    }
+  }, [data]);
 
   function onChangeHandler({ event, key }) {
     const newCredentials = { ...credentials };
@@ -37,7 +46,7 @@ function Auth({ type }) {
       <Container className='row'>
         <Panel className='row col-9 col-md-6'>
           { data ?
-            <Message>{ data.registerMessage }</Message>
+            <Message>{ data.message }</Message>
             :
             <>
               { inputsIds.map((id) =>

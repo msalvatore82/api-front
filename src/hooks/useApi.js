@@ -40,5 +40,11 @@ export function useApi() {
     }
   }
 
-  return { request, data, error, loading };
+  function clear() {
+    setData();
+    setError();
+    setLoading(false);
+  }
+
+  return { request, data, error, loading, clear };
 }

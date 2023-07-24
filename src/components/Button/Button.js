@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = styled.div`
   padding: 5px;
-  background-color: rgb(169 165 138);
+  background-color: var(--primaryColor);
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -12,8 +12,9 @@ const Button = styled.div`
 
   /* Estilos para el efecto hover */
   &:hover {
-    background-color: rgb(149, 145, 118);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   }
 `;
 

@@ -8,7 +8,7 @@ const Panel = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(109 92 83);
+  color: var(--secondaryColor);
 `;
 
 export default Panel;

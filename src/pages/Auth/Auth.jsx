@@ -37,7 +37,7 @@ function Auth({ type }) {
       <Container className='row'>
         <Panel className='row col-9 col-md-6'>
           { data ?
-            <Message>{ data.message }</Message>
+            <Message>{ data.registerMessage }</Message>
             :
             <>
               { inputsIds.map((id) =>

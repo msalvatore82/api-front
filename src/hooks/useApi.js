@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import API_URL from '../apiUrl.js';
 
 export function useApi() {
   const [data, setData] = useState();
@@ -12,7 +13,7 @@ export function useApi() {
     const isLogin = route === 'login';
     const isRegister = route === 'register';
     try {
-      const response = await fetch(process.env.API_URL, {
+      const response = await fetch(API_URL + route, {
         method,
         headers: {
           'Content-Type': 'application/json',
@@ -39,5 +40,11 @@ export function useApi() {
     }
   }
 
-  return { request, data, error, loading };
+  function clear() {
+    setData();
+    setError();
+    setLoading(false);
+  }
+
+  return { request, data, error, loading, clear };
 }

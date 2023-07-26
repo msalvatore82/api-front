@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 import { useApi } from '../../hooks/useApi.js';
 
 import InputGroup from '../../components/InputGroup/InputGroup.jsx';
 import Logo from '../../components/Logo/Logo.jsx';
 import Loading from '../../components/Loading/Loading.js';
+import Error from '../../components/Error/Error.jsx';
 import Container from '../../components/Container/Container.js';
 import Panel from '../../components/Panel/Panel.js';
 import Button from '../../components/Button/Button.js';
@@ -17,9 +17,19 @@ import './Auth.css';
 
 function Auth({ type }) {
   const inputsIds = type === 'register' ? ['username', 'mail', 'password'] : ['username', 'password'];
-  const { request, data, error, loading } = useApi();
   const [credentials, setCredentials] = useState({});
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { request, data, error, loading, clear } = useApi();
+
+  useEffect(() => {
+    if (data?.message) {
+      setTimeout(() => {
+        clear();
+        navigate('/login');
+      }, 10 * 1000);
+    }
+  }, [data]);
 
   function onChangeHandler({ event, key }) {
     const newCredentials = { ...credentials };
@@ -70,6 +80,7 @@ function Auth({ type }) {
           }
 
         </Panel>
+        { error && <Error message={ error.message } /> }
         { loading && <Modal><Loading><Logo/></Loading></Modal> }
       </Container>
     </div>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledSelect = styled.select`
   background-color: transparent;
   border: 0;
-  color: rgb(109 92 83);
+  color: var(--secondaryColor);
   cursor: pointer;
 
   &:focus-visible {
@@ -11,13 +11,13 @@ const StyledSelect = styled.select`
   }
 
   &>option {
-    background-color: rgb(169 165 138);
+    background-color: var(--primaryColor);
     cursor: pointer;
   }
 
   &>option:checked {
-    background-color: rgb(109 92 83);
-    color: rgb(169 165 138);
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
     cursor: pointer;
   }
 `;

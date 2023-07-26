@@ -9,15 +9,15 @@ const Loading = styled.div`
   }
 
   & path {
-    fill: rgb(169 165 138);
+    fill: var(--primaryColor);
     animation: pulse 5s infinite;
   }
 
   @keyframes pulse {
-    0%   { fill: rgb(169 165 138) }
-    40% { fill: rgb(109 92 83) }
-    60% { fill: rgb(109 92 83) }
-    100% { fill: rgb(169 165 138) }
+    0% { fill: var(--primaryColor) }
+    40% { fill: var(--secondaryColor) }
+    60% { fill: var(--secondaryColor) }
+    100% { fill: var(--primaryColor) }
   }
 
 `;

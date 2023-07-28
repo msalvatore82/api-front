@@ -23,6 +23,10 @@ function Auth({ type }) {
   const { request, data, error, loading, clear } = useApi();
 
   useEffect(() => {
+    if (data?.token) {
+      navigate('/');
+    }
+
     if (data?.message) {
       setTimeout(() => {
         clear();
@@ -67,7 +71,7 @@ function Auth({ type }) {
 
               <Button onClick={() => request({
                 route: type,
-                method:'POST',
+                method: 'POST',
                 body: { ...credentials }
               }, t('authPage.checkEmail'))}>
                 { t(`authPage.${type}.buttonText`) }

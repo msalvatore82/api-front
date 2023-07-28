@@ -28,7 +28,8 @@ export function useApi() {
           registerMessage && setData({ message: registerMessage });
         } else {
           const responseAsJson = await response.json();
-          isLogin ? localStorage.token = responseAsJson : setData(responseAsJson);
+          isLogin && (localStorage.token = responseAsJson.token);
+          setData(responseAsJson);
         }
       } else {
         setError(new Error(`${response.status}: ${response.statusText}`));

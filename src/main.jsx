@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './AppRouter.jsx';
 import Navbar from './components/Navbar/Navbar';
 import PageContainer from './components/PageContainer/PageContainer';
+import { LoggedUserProvider } from './contexts/loggedUserContext.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './colors.css';
@@ -15,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Navbar />
       <PageContainer>
-        <AppRouter />
+        <LoggedUserProvider>
+          <AppRouter />
+        </LoggedUserProvider>
       </PageContainer>
     </BrowserRouter>
   </React.StrictMode>,

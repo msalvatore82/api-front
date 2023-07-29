@@ -12,6 +12,7 @@ export function useApi() {
     setLoading(true);
     const isLogin = route === 'login';
     const isRegister = route === 'register';
+
     try {
       const response = await fetch(API_URL + route, {
         method,

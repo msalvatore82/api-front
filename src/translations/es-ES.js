@@ -2,7 +2,7 @@ export const TRANSLATIONS_ES = {
   navBar: {
     home: 'Inicio',
     register: 'Registro',
-    login: 'Acceder',
+    login: 'Login',
     about: 'Sobre nosotros',
     booking: 'Cita',
     profile: 'Perfil',

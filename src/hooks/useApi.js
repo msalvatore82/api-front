@@ -30,7 +30,7 @@ export function useApi() {
         } else {
           const responseAsJson = await response.json();
           isLogin && (localStorage.token = responseAsJson.token);
-          setData({ ...responseAsJson });
+          setData(responseAsJson);
         }
       } else {
         setError(new Error(`${response.status}: ${response.statusText}`));

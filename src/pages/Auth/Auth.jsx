@@ -42,52 +42,45 @@ function Auth({ type }) {
   }
 
   return (
-    <div className='auth'>
-      <Link className='nav-link' to={ '/' }>
-        <div className='logoContainer'>
-          <Logo/>
-        </div>
-      </Link>
-      <Container className='row'>
-        <Panel className='row col-9 col-md-6'>
-          { data ?
-            <Message>{ data.message }</Message>
-            :
-            <>
-              { inputsIds.map((id) =>
-                <InputGroup
-                  key={ id }
-                  label={ t(`authPage.${id}.label`) }
-                  input={
-                    {
-                      id,
-                      placeholder: t(`authPage.${id}.placeholder`),
-                      type: id === 'password' && id,
-                      onChange: (e) => onChangeHandler({ event: e, key: id })
-                    }
+    <Container className='row'>
+      <Panel className='row col-9 col-md-6'>
+        { data ?
+          <Message>{ data.message }</Message>
+          :
+          <>
+            { inputsIds.map((id) =>
+              <InputGroup
+                key={ id }
+                label={ t(`authPage.${id}.label`) }
+                input={
+                  {
+                    id,
+                    placeholder: t(`authPage.${id}.placeholder`),
+                    type: id === 'password' && id,
+                    onChange: (e) => onChangeHandler({ event: e, key: id })
                   }
-                />
-              )}
+                }
+              />
+            )}
 
-              <Button onClick={() => request({
-                route: type,
-                method: 'POST',
-                body: { ...credentials }
-              }, t('authPage.checkEmail'))}>
-                { t(`authPage.${type}.buttonText`) }
-              </Button>
+            <Button onClick={() => request({
+              route: type,
+              method: 'POST',
+              body: { ...credentials }
+            }, t('authPage.checkEmail'))}>
+              { t(`authPage.${type}.buttonText`) }
+            </Button>
 
-              <Link className='nav-link auth-link' to={ type === 'login' ? '/register' : '/login' }>
-                { t(`authPage.${type}.link`) }
-              </Link>
-            </>
-          }
+            <Link className='nav-link auth-link' to={ type === 'login' ? '/register' : '/login' }>
+              { t(`authPage.${type}.link`) }
+            </Link>
+          </>
+        }
 
-        </Panel>
-        { error && <Error message={ error.message } /> }
-        { loading && <Modal><Loading><Logo/></Loading></Modal> }
-      </Container>
-    </div>
+      </Panel>
+      { error && <Error message={ error.message } /> }
+      { loading && <Modal><Loading><Logo/></Loading></Modal> }
+    </Container>
   );
 }
 

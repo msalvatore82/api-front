@@ -1,20 +1,6 @@
-.auth {
-  height: 100vh;
-  width: 100vw;
-  background-image: url('/background.jpg');
-  background-repeat: round;
-}
-
 .auth-link {
   text-align: center;
   margin-top: 20px !important;
-}
-
-.logoContainer {
-  height: 100px;
-  position: absolute;
-  top: 50px;
-  left: 50px;
 }
 
 .logoContainer > svg {

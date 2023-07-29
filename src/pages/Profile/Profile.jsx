@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../../components/Navbar/Navbar'
 
 import './Profile.css'
 import Button from '../../components/Button/Button'
@@ -16,7 +15,6 @@ export default function Profile() {
 
   return (
     <>
-      <Navbar />
       <div className=' profile'>
         <div className='container-profile'>
 

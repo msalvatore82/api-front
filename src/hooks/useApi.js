@@ -12,6 +12,7 @@ export function useApi() {
     setLoading(true);
     const isLogin = route === 'login';
     const isRegister = route === 'register';
+
     try {
       const response = await fetch(API_URL + route, {
         method,
@@ -29,7 +30,7 @@ export function useApi() {
         } else {
           const responseAsJson = await response.json();
           isLogin && (localStorage.token = responseAsJson.token);
-          setData(responseAsJson);
+          setData({ ...responseAsJson });
         }
       } else {
         setError(new Error(`${response.status}: ${response.statusText}`));

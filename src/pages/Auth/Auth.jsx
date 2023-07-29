@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { useApi } from '../../hooks/useApi.js';
+import { useLoggedUserContext } from '../../contexts/loggedUserContext.jsx';
 
 import InputGroup from '../../components/InputGroup/InputGroup.jsx';
 import Logo from '../../components/Logo/Logo.jsx';
@@ -21,10 +22,12 @@ function Auth({ type }) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { request, data, error, loading, clear } = useApi();
+  const userApiHook = useApi();
+  const { setLoggedUser } = useLoggedUserContext();
 
   useEffect(() => {
     if (data?.token) {
-      navigate('/');
+      userApiHook.request({ route: 'users/getusernamebytoken' });
     }
 
     if (data?.message) {
@@ -34,6 +37,15 @@ function Auth({ type }) {
       }, 10 * 1000);
     }
   }, [data]);
+
+  useEffect(() => {
+    if (!userApiHook.data) {
+      return;
+    }
+
+    setLoggedUser({ ...userApiHook.data });
+    navigate('/');
+  }, [userApiHook.data]);
 
   function onChangeHandler({ event, key }) {
     const newCredentials = { ...credentials };

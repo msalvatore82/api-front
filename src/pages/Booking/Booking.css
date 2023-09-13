@@ -1,0 +1,10 @@
+.bookingPage {
+  height: 90vh;
+  width: 100vw;
+  background-image: url('/background.jpg');
+  background-repeat: round;
+}
+
+.bookingPanel {
+  width: 1000px;
+}

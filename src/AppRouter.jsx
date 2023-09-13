@@ -2,6 +2,7 @@ import { useRoutes } from 'react-router-dom';
 import Auth from './pages/Auth/Auth.jsx';
 import Landing from './pages/Landing/Landing.jsx';
 import Profile from './pages/Profile/Profile.jsx';
+import Booking from './pages/Booking/Booking.jsx';
 
 function AppRouter() {
   return useRoutes(
@@ -22,6 +23,10 @@ function AppRouter() {
       {
         element: <Profile type='profile'/>,
         path: '/profile',
+      },
+      {
+        element: <Booking/>,
+        path: '/booking',
       }
     ]
   );

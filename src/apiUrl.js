@@ -1,1 +1,1 @@
-export default 'https://apihairs-mbe1.onrender.com/';
+export default 'https://apihairs-7342.onrender.com/';

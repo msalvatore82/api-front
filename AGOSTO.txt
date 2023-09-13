@@ -1,0 +1,21 @@
+API & React (Responsive! con traducciones, mínimo usuarios y otra colección)
+
+jest => testing
+
+swagger & jsdocs => docu
+
+multer || base64 => cargar imagenes en server
+
+-----------------------------------------
+
+SQL & sequalize => Base de datos relacionales
+
+Docker & Docker-compose => contenedor de aplicaciones
+
+Jenkins || GitHub actions => CI / CD -----> commit, npm i, eslint, npm run test, deploy
+
+-----------------------------------------
+
+rabbit mq => encolador de peticiones
+
+Typescript => tipado de datos

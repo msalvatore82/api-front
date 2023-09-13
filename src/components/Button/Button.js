@@ -16,7 +16,18 @@ const Button = styled.div`
     background-color: var(--secondaryColor);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   }
-`;
 
+  &.disabled {
+    color: var(--white);
+    background-color: grey;
+    cursor: not-allowed;
+    user-select: none;
+    box-shadow: none;
+  }
+
+  &.disabled:hover {
+    box-shadow: none;
+  }
+`;
 
 export default Button;

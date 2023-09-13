@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import API_URL from '../apiUrl.js';
 
-export function useApi() {
-  const [data, setData] = useState();
+export function useApi(defaultValue) {
+  const [data, setData] = useState(defaultValue);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
   async function request({ route, method='GET', body, headers={} }, registerMessage) {
-    setData();
+    setData(defaultValue);
     setError();
     setLoading(true);
     const isLogin = route === 'login';
@@ -42,8 +42,8 @@ export function useApi() {
     }
   }
 
-  function clear() {
-    setData();
+  function clear(defaultValue) {
+    setData(defaultValue);
     setError();
     setLoading(false);
   }

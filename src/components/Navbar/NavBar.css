@@ -15,6 +15,9 @@
   height: 100%;
   list-style: none;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navBar li a {

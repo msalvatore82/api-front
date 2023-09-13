@@ -32,7 +32,7 @@ function Auth({ type }) {
 
     if (data?.message) {
       setTimeout(() => {
-        clear();
+        clear([]);
         navigate('/login');
       }, 10 * 1000);
     }
